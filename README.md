@@ -1,23 +1,22 @@
-# Environmental Data Analysis: Alaska Salmon Fisheries & Wildfire Air Quality Impacts
-
-**Author:** Emily Miller  
-**Course:** EDS 220 - Working with Environmental Datasets  
-**Program:** UCSB Masters in Environmental Data Science  
-**Repository:** https://github.com/rellimylime/eds220-hwk2
-
----
+# Environmental Data Analysis: Historical Alaskan Salmon & Wildfire Air Quality
 
 ## About
 
-This repository contains two Python-based data analysis workflows demonstrating essential techniques for working with environmental datasets:
+This repository contains two data analysis workflows examining environmental patterns through temporal and spatial lenses. The first analyzes over a century of commercial salmon catch data to identify regional productivity patterns in Alaska fisheries. The second quantifies the impact of California's 2017 Thomas Fire on local air quality using EPA monitoring data.
 
-1. **Alaska Commercial Salmon Catch Analysis (1886-1997)**: Analyzes over a century of commercial salmon catch data to identify regional patterns in Alaska fisheries productivity. This workflow demonstrates data cleaning, type conversion, aggregation, and visualization techniques.
+The project demonstrates:
+- Data cleaning and quality control for legacy environmental datasets
+- Time series manipulation with datetime indexing and rolling window analysis
+- Data type conversion and handling of OCR errors in digitized records
+- Aggregation and statistical summarization across geographic regions
+- Professional data visualization with contextual annotations
+- Integration of multi-year datasets from federal agencies
+- Reproducible workflow practices for environmental data science
 
-2. **Santa Barbara Air Quality During the 2017 Thomas Fire**: Examines the impact of California's Thomas Fire on local air quality using EPA Air Quality Index (AQI) data. This analysis showcases time series manipulation, rolling window calculations, and event-focused visualization.
+This work was completed as part of EDS 220 - Working with Environmental Datasets in the UCSB Master of Environmental Data Science program.
 
-Both analyses follow professional data science workflow standards with comprehensive documentation, detailed code comments, and reproducible methodology suitable for environmental data science portfolios.
+## Repository Structure
 
----
 
 ## Repository Structure
      └── task2  
@@ -36,45 +35,40 @@ Both analyses follow professional data science workflow standards with comprehen
 
 ## Data
 
-### Alaska Salmon Data (Task 2)
+### Data Sources
 
-**Location:** `task2/data/salmon_data.csv`
+**Alaska Commercial Salmon Catch Data (1886-1997)**  
+Historical commercial salmon catch records from the Alaska Department of Fish & Game, documenting catch volumes (in thousands of fish) by management region, year, and species. This simplified dataset was derived from original reports and published through the Knowledge Network for Biocomplexity.
 
-**Source:** Alaska Department of Fish & Game (via KNB Data Repository)
+**EPA Air Quality Index - Daily County Summaries**  
+Daily Air Quality Index values for U.S. counties from the Environmental Protection Agency's Air Quality System (AQS). The AQI integrates measurements of major air pollutants (PM2.5, PM10, ozone, CO, SO2, NO2) into a standardized indicator ranging from 0-500.
 
-**Description:** Simplified dataset containing commercial salmon catches by management region from 1886 to 1997. Data includes catch volumes (in thousands of fish) organized by region, year, and salmon species across 18 Alaska management areas.
+### Data Access
 
-**To run the analysis:** The data file is included in the repository. Simply open and run `task2/hwk2-task2-salmon.ipynb` in Jupyter.
+**Task 2 - Alaska Salmon Analysis:**  
+The salmon catch data is **included** in this repository at `task2/data/salmon_data.csv`. No additional downloads required.
 
-### Air Quality Index Data (Task 3)
+**Task 3 - Air Quality Analysis:**  
+The EPA AQI data is **accessed directly** from EPA servers within the notebook. The analysis automatically downloads:
+- 2017 Daily AQI by County: https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2017.zip
+- 2018 Daily AQI by County: https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2018.zip
 
-**Location:** Data is accessed directly from EPA servers (no local storage required)
+**Note:** An internet connection is required to run the Task 3 analysis.
 
-**Source:** U.S. Environmental Protection Agency Air Quality System (AQS)
+## Requirements
 
-**Description:** Daily AQI values for all U.S. counties with air quality monitoring. The analysis filters to Santa Barbara County, California for 2017-2018.
-
-**To run the analysis:** Open and run `task3/hwk2-task3-aqi.ipynb` in Jupyter. The notebook automatically downloads data from:
-- https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2017.zip
-- https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2018.zip
-
-**Note:** Internet connection required for Task 3 analysis.
-
----
+This analysis requires Python 3.x with the following packages:
+- `pandas` - Tabular data manipulation and time series analysis
+- `matplotlib` - Data visualization and plotting
+- `numpy` - Numerical operations (implicit dependency)
 
 ## References
-
-### Course Materials
-
-Galaz García, C., Cawse-Nicholson, K., Frew, A., & Fontenot, R. (2024). *EDS 220 - Working with environmental datasets*. UCSB Masters in Environmental Data Science. https://meds-eds-220.github.io/MEDS-eds-220-course/
-
-### Data Sources - Task 2
 
 Byerly, M. (2016). *Alaska commercial salmon catches by management region (1886-1997)* [Data set]. Knowledge Network for Biocomplexity. https://doi.org/10.5063/F1T43R7N
 
 Do-Linh, H., Galaz García, C., Jones, M. B., & Vargas Poulsen, C. (2023). *Open Science Synthesis training Week 1*. NCEAS Learning Hub & Delta Stewardship Council. https://learning.nceas.ucsb.edu/2023-06-delta/session_11.html
 
-### Data Sources - Task 3
+Galaz García, C., Cawse-Nicholson, K., Frew, A., & Fontenot, R. (2024). *EDS 220: Working with environmental datasets* [Course materials]. Master of Environmental Data Science, Bren School of Environmental Science & Management, University of California, Santa Barbara. https://meds-eds-220.github.io/MEDS-eds-220-course/
 
 U.S. Environmental Protection Agency. (2024). *Air quality index basics*. AirNow. https://www.airnow.gov/aqi/aqi-basics/
 
@@ -82,12 +76,10 @@ U.S. Environmental Protection Agency. (2024). *Pre-generated data files* [Data f
 
 Wikipedia contributors. (2024). *Thomas Fire*. In *Wikipedia, The Free Encyclopedia*. https://en.wikipedia.org/wiki/Thomas_Fire
 
----
-
 ## License
 
 This project is licensed under the terms included in the LICENSE file.
 
 ---
 
-*This repository was created as part of the EDS 220 course in the UCSB Masters in Environmental Data Science program.*
+*This project is part of the curriculum for the Master of Environmental Data Science program at the Bren School of Environmental Science & Management, UC Santa Barbara.*
