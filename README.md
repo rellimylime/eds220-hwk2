@@ -1,31 +1,25 @@
-# EDS 220 - Assignment 2, tasks 2 and 3
+# Environmental Data Analysis: Alaska Salmon Fisheries & Wildfire Air Quality Impacts
 
-This repository contains materials for the second assignment for the course [EDS 220 - Working with Environmental Datasets](https://meds-eds-220.github.io/MEDS-eds-220-course/). This course is part of the [UCSB Masters in Environmental Data Science](https://bren.ucsb.edu/masters-programs/master-environmental-data-science).
+**Author:** Emily Miller  
+**Course:** EDS 220 - Working with Environmental Datasets  
+**Program:** UCSB Masters in Environmental Data Science  
+**Repository:** https://github.com/rellimylime/eds220-hwk2
 
-## Assignment instructions
-Complete instructions for this assignment are in [the course website](https://meds-eds-220.github.io/MEDS-eds-220-course/assignments/assignment2.html).
+---
 
-## Notebook instructions
-The notebooks `hwk2-task2-salmon.ipynb` and `hwk2-task3-aqi.ipynb` have exercises for practicing data wrangling using `pandas`, including working with time series. Each notebook contains detailed instructions on how to complete the exercises. 
+## About
 
+This repository contains two Python-based data analysis workflows demonstrating essential techniques for working with environmental datasets:
 
-## Otter Grader Checks
-These notebooks utilize the `otter` library and have self contained checks within the notebooks to ensure you are on the right track. Follow the steps below to run the otter grader checks. 
+1. **Alaska Commercial Salmon Catch Analysis (1886-1997)**: Analyzes over a century of commercial salmon catch data to identify regional patterns in Alaska fisheries productivity. This workflow demonstrates data cleaning, type conversion, aggregation, and visualization techniques.
 
-1. Run the very first cell of the notebook that contains the  ""#Initialize Otter" comment.
-2. Fill in code where the notebook instructs you to do so. 
-3. When you encounter a `gracer.check()` cell, like the image below, run the cell. Doing so will either return an emoji with the text "q# passed!", or it will tell you the test did not pass. If your test did not pass, try rereading the prompt and making sure your output is what you would expect.
+2. **Santa Barbara Air Quality During the 2017 Thomas Fire**: Examines the impact of California's Thomas Fire on local air quality using EPA Air Quality Index (AQI) data. This analysis showcases time series manipulation, rolling window calculations, and event-focused visualization.
 
-<img width="717" height="99" alt="Screenshot 2025-09-30 at 2 16 07 PM" src="https://github.com/user-attachments/assets/7d76e82a-3c5e-4630-bcf5-c25e26bf5ee7" />
+Both analyses follow professional data science workflow standards with comprehensive documentation, detailed code comments, and reproducible methodology suitable for environmental data science portfolios.
 
+---
 
-4. The very last cell of the notebook contains a cell with `grader_check_all()`. This runs all tests in the notebook and reports the tests that have passed as well as the ones that have failed. Be sure to run this cell! Ideally, your output will look like the following (question numbers may differ). 
-
-<img width="825" height="471" alt="Screenshot 2025-09-30 at 1 15 25 PM" src="https://github.com/user-attachments/assets/e0a030a7-cce5-4901-b501-bfc2f86120ed" />
-
-
-
-## Repository Contents
+## Repository Structure
      └── task2  
         └── data                          # Contains the data used in the analysis, as well as all data used for the tests       
         └── tests                         # Contains a .py file for each test
@@ -38,26 +32,62 @@ These notebooks utilize the `otter` library and have self contained checks withi
       └── README.md
       └── License.txt
 
+---
 
+## Data
 
+### Alaska Salmon Data (Task 2)
 
-## Rubric
+**Location:** `task2/data/salmon_data.csv`
 
-Please [review the rubric for these tasks](https://docs.google.com/document/d/1x0BoU6IH4cnOR1-n7i9CYQ9wUC37yDpYlQ4j6rCfcsU/edit?usp=sharing) before starting your work. 
+**Source:** Alaska Department of Fish & Game (via KNB Data Repository)
 
+**Description:** Simplified dataset containing commercial salmon catches by management region from 1886 to 1997. Data includes catch volumes (in thousands of fish) organized by region, year, and salmon species across 18 Alaska management areas.
 
-## Submission instructions
-**All tasks for this assignment should be submitted via Gradescope.** Make sure you double-check your submission to ensure it satisfies all the items in this checklist:
+**To run the analysis:** The data file is included in the repository. Simply open and run `task2/hwk2-task2-salmon.ipynb` in Jupyter.
 
-- [ ] Answers for tasks 2 and 3 must be submitted as .ipynb files (Jupyter Notebooks) to Gradescope, *not* a PDF or other format.
-- [ ] Ensure your notebooks include a link to your assignment's GitHub repository in the designated section.
-- [ ] The notebooks you submit must have your solutions to the exercises, They *should not be the blank template notebooks*. 
-- [ ] The notebooks you submit must include your code *and* all required rendered plots, graphs, and printed output. Run all cells before submitting your .ipynb file and make sure all the outputs are visible. Be sure the final `grader.check_all()` cell ran to receive points for the autograder tests.
-- [ ] Double-check that each notebook or PDF is uploaded to the correct task on Gradescope. 
+### Air Quality Index Data (Task 3)
 
-**Resubmissions after the due date due to not satisfying one of the checks above will be strictly held to the course's 50%-regrade resubmission policy (see syllabus).**
+**Location:** Data is accessed directly from EPA servers (no local storage required)
 
-If you have any questions, please reach out to the instructional team by 5 pm on the day before the assignment is due.
+**Source:** U.S. Environmental Protection Agency Air Quality System (AQS)
 
+**Description:** Daily AQI values for all U.S. counties with air quality monitoring. The analysis filters to Santa Barbara County, California for 2017-2018.
 
-Happy coding!
+**To run the analysis:** Open and run `task3/hwk2-task3-aqi.ipynb` in Jupyter. The notebook automatically downloads data from:
+- https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2017.zip
+- https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2018.zip
+
+**Note:** Internet connection required for Task 3 analysis.
+
+---
+
+## References
+
+### Course Materials
+
+Galaz García, C., Cawse-Nicholson, K., Frew, A., & Fontenot, R. (2024). *EDS 220 - Working with environmental datasets*. UCSB Masters in Environmental Data Science. https://meds-eds-220.github.io/MEDS-eds-220-course/
+
+### Data Sources - Task 2
+
+Byerly, M. (2016). *Alaska commercial salmon catches by management region (1886-1997)* [Data set]. Knowledge Network for Biocomplexity. https://doi.org/10.5063/F1T43R7N
+
+Do-Linh, H., Galaz García, C., Jones, M. B., & Vargas Poulsen, C. (2023). *Open Science Synthesis training Week 1*. NCEAS Learning Hub & Delta Stewardship Council. https://learning.nceas.ucsb.edu/2023-06-delta/session_11.html
+
+### Data Sources - Task 3
+
+U.S. Environmental Protection Agency. (2024). *Air quality index basics*. AirNow. https://www.airnow.gov/aqi/aqi-basics/
+
+U.S. Environmental Protection Agency. (2024). *Pre-generated data files* [Data files]. Air Quality System (AQS). https://www.epa.gov/outdoor-air-quality-data
+
+Wikipedia contributors. (2024). *Thomas Fire*. In *Wikipedia, The Free Encyclopedia*. https://en.wikipedia.org/wiki/Thomas_Fire
+
+---
+
+## License
+
+This project is licensed under the terms included in the LICENSE file.
+
+---
+
+*This repository was created as part of the EDS 220 course in the UCSB Masters in Environmental Data Science program.*
